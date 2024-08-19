@@ -1,15 +1,20 @@
+import time
+
+
 def es_palindromo(texto):
-    resultado = ""
+    inicio = time.time()
     var = ""
     var2 = ""
+    signos = [".", ",", ";", ":", "...", " ", "?", "¿", '""', "''"]
+    time.sleep(1)
     for i in range(0, len(texto), 1):
-        if texto[i] != " ":
+        if texto[i] not in signos:
             var += texto[i]
     for j in range(len(texto)-1, -1, -1):
-        if (texto[j]) != " ":
+        if (texto[j]) not in signos:
             var2 += texto[j]
-    print(var)
-    print(var2)
+    fin = time.time()
+    print(fin-inicio)
     if var.lower() == var2.lower():
         return True
     else:
